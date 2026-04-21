@@ -716,7 +716,7 @@ document.querySelectorAll('.reveal').forEach(function(el){obs.observe(el);});
 // ── Guest name from URL ──
 document.addEventListener('DOMContentLoaded',function(){
   var p=new URLSearchParams(window.location.search);
-  var n=p.get('name')||p.get('guest')||'';
+var n=(p.get('name')||p.get('guest')||'').replace(/\+/g,' ');
   if(n){
     n=decodeURIComponent(n);
     var el=document.getElementById('guestGreeting');
